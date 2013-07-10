@@ -102,6 +102,6 @@ def censored_buffers
 end
 
 def remove_formatting str
-  str.gsub(/[0-9]{1,2}(,{0-9}{1,2})?|[[:cntrl:]]/, '')
+  str.gsub /[0-9]{1,2}(,{0-9}{1,2})?|[[:cntrl:]]/, ''
 end
 
