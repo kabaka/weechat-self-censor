@@ -68,6 +68,8 @@ def censor string, buffer
     color = Weechat.color get_forbidden_color
     reset = Weechat.color 'reset'
 
+    string = remove_formatting string
+
     found.uniq.each do |word|
       string.gsub! /\b(#{word})([^\w]|$)/,
         "#{color}\\1#{reset}\\2"
@@ -97,5 +99,9 @@ end
 
 def censored_buffers
   Weechat.config_get_plugin 'censored_buffers'
+end
+
+def remove_formatting str
+  str.gsub(/[0-9]{1,2}(,{0-9}{1,2})?|[[:cntrl:]]/, '')
 end
 
