@@ -68,8 +68,6 @@ def censor string, buffer
     color = Weechat.color get_forbidden_color
     reset = Weechat.color 'reset'
 
-    string.insert 0, Weechat.color(reset)
-
     found.uniq.each do |word|
       string.gsub! /\b(#{word})([^\w]|$)/,
         "#{color}\\1#{reset}\\2"
