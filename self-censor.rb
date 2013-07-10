@@ -37,7 +37,7 @@ def weechat_init
     'Color of forbidden words in output.'
 
   if Weechat.config_is_set_plugin('forbidden_word_color').zero?
-    Weechat.config_set_plugin 'forbidden_word_color', '*red'
+    Weechat.config_set_plugin 'forbidden_word_color', 'red'
   end
 
   Weechat::WEECHAT_RC_OK
