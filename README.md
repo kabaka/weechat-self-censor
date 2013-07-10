@@ -20,3 +20,13 @@ Simply set the appropriate options and the script will operate on its own.
 means that you cannot include punctuation or spaces in the words you forbid.
 This limitation *may* be removed in future versions.
 
+## Bypassing
+
+Presently, only plain messages and `/me` are checked for forbidden words.
+Because of this, you can bypass the script by using `/msg`.
+
+This is intentional, as you may need to send a forbidden word for some reason,
+and you do not want to add an exclusion. This might be useful if you forbid
+sending your password, but still want to be able to send it to network
+services.
+
