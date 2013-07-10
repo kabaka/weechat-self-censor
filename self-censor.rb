@@ -71,7 +71,7 @@ def censor string, buffer
     string.insert 0, Weechat.color(reset)
 
     found.uniq.each do |word|
-      string.gsub! /\b(#{word})([^\w])/,
+      string.gsub! /\b(#{word})([^\w]|$)/,
         "#{color}\\1#{reset}\\2"
     end
 
