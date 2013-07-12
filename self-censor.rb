@@ -56,7 +56,7 @@ def censor string, buffer
 
   forbidden = get_forbidden
 
-  string.downcase.scan(/\w+/).each do |word|
+  string.scan(/\w+/).each do |word|
     forbidden.each do |mask|
       next if Weechat.string_match(word, mask, 0).zero?
       
